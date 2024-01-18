@@ -6,12 +6,11 @@ const data5 = document.getElementById('data5')
 const data6 = document.getElementById('data6')
 
 
-const url = 'https://covid-193.p.rapidapi.com/statistics';
- const options = {
+const options = {
     method: 'GET',
-   headers: {
-       'X-RapidAPI-Key': '4bdb2f0a49msh645dc5c5c1644adp1d970bjsn66e93ae62258',
-        'X-RapidAPI-Host': 'covid-193.p.rapidapi.com'
+    headers: {
+       'X-RapidAPI-Key': '',
+       'X-RapidAPI-Host': 'covid-193.p.rapidapi.com'
     }
 };
 
@@ -34,6 +33,6 @@ let datafetch = async () => {
         data5.innerHTML = data.response[0].deaths.total ?? 0
         data6.innerHTML = data.response[0].tests.total ?? 0
       } catch (error) {
-          console.log(error);
+          alert("Danger no data find another country")
       }
 }
